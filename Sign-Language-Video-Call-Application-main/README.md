@@ -1,100 +1,57 @@
-# Sign Language Video Call Application
+What is this Project?
+Think of this as "Skype or Zoom with a built-in translator." It is a website where two people can video chat.
 
-A web-based video call application with sign language detection and speech-to-sign conversion capabilities.
+If you use Sign Language, the camera watches your hands and writes down what you are signing.
 
-## Features
+If you Speak, the computer hears you and shows pictures of sign language gestures to the other person.
 
-- Real-time video calls between two users
-- Sign language detection using machine learning
-- Real-time display of detected signs
-- Speech-to-sign language conversion
-- Room-based system for easy joining
-- Camera and microphone controls
+Key Features (What can it do?)
+Video Chat: You can see and hear the other person in real-time.
 
-## Prerequisites
+Smart Camera: It uses Artificial Intelligence (AI) to recognize your hand movements.
 
-- Python 3.8 or higher
-- pip (Python package manager)
-- A modern web browser (Chrome, Firefox, Edge)
-- Webcam and microphone access
+Voice Translator: If you speak, it converts your words into sign language images.
 
-## Installation
+Private Rooms: You create a specific "room" with a secret code so only your friend can join.
 
-1. Clone this repository or download the files.
+What You Need (Prerequisites)
+Before you start, you need a computer with:
 
-2. Create and activate a virtual environment (recommended):
-   ```
-   python -m venv venv
-   
-   # On Windows
-   venv\Scripts\activate
-   
-   # On macOS/Linux
-   source venv/bin/activate
-   ```
+Python: A programming language installed on your computer.
 
-3. Install the required dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+A Browser: Chrome, Firefox, or Edge.
 
-## Running the Application
+Hardware: A working webcam and microphone.
 
-1. Start the Flask server:
-   ```
-   python app.py
-   ```
+How to Set It Up (Installation)
+Get the files: Download the project folder to your computer.
 
-2. Open your web browser and navigate to:
-   ```
-   http://localhost:5000
-   ```
+Create a workspace: Run a command to create a "virtual environment." This is like a clean, separate box for this project so it doesn't mess up other things on your computer.
 
-3. The application should now be running. You can:
-   - Create a new room
-   - Join an existing room using a room ID
-   - Use the sign language detection feature by showing signs to the camera
-   - Convert speech to sign language images
+Install tools: Run the command pip install -r requirements.txt. This tells Python to go download all the helper tools (like the AI brain) needed to run the app.
 
-## Usage
+How to Run It
+Start the Engine: Open your command prompt and type python app.py. This turns on the server (the brain of the app).
 
-### Creating a Room
-1. Click the "Create Room" button on the homepage
-2. Share the generated Room ID with another person you want to call
+Open the App: Go to your web browser and type http://localhost:5000. The website will appear.
 
-### Joining a Room
-1. Enter the Room ID shared with you in the input field
-2. Click the "Join Room" button
+How to Use It (Step-by-Step)
+Start a Call: Click "Create Room." The app will give you a random Room ID (like a password).
 
-### During the Call
-- Use the camera toggle button to turn your camera on/off
-- Use the microphone toggle button to mute/unmute your microphone
-- Show sign language gestures to the camera for detection
-- Use the speech recognition feature to convert speech to sign language images
-- Click "Leave Room" to end the call
+Invite a Friend: Send that Room ID to your friend.
 
-## How It Works
+Friend Joins: Your friend opens the site, types in that Room ID, and clicks "Join Room."
 
-- **Sign Language Detection**: Uses a machine learning model trained on hand landmarks detected by MediaPipe to recognize sign language gestures
-- **Speech-to-Sign Conversion**: Converts spoken words to corresponding sign language images
-- **WebRTC**: Enables peer-to-peer video communication
-- **WebSockets**: Manages room creation/joining and real-time communication
+Chat:
+Toggle your camera and mic on.
 
-## Project Structure
+Show your hands to the camera to have the AI read your signs.
 
-- `app.py`: Flask server with WebSocket handling and sign language processing
-- `templates/index.html`: HTML template for the web interface
-- `static/style.css`: CSS styling for the web interface
-- `static/script.js`: JavaScript for client-side functionality
-- `backend/`: Contains the sign language detection model and images
-  - `sign_language_model3.pkl`: The trained model for sign language detection
-  - `image/`: Directory with sign language images for different words/letters
+Speak into the mic to see your words turn into sign language images.
 
-## Credits
+How It Works (The Magic Behind the Scenes)
+The Brain (Machine Learning): The app uses a tool called MediaPipe. Imagine an invisible skeleton that draws lines on your hands to track exactly where your fingers are moving.
 
-This application uses the following technologies:
-- Flask and Flask-SocketIO for the server
-- MediaPipe for hand landmark detection
-- WebRTC for peer-to-peer video calls
-- Web Speech API for speech recognition
-- Socket.IO for real-time communication 
+The Connection (WebRTC): This technology connects your computer directly to your friend's computer so the video is fast.
+
+The Messenger (WebSockets): This sends messages back and forth instantly, like "User joined the room" or "He just signed the letter A."
